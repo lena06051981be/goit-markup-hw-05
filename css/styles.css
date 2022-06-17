@@ -141,9 +141,9 @@ button {
 .header-item-link {
   color: var(--main-color);
   margin-top: 4px;
-  position: relative; /*!!!!!!!!!!!!!! ЕСЛИ НЕТ - ТО ФИГУРА
+  position: relative; /*!!!!!!!!!!!!! ЕСЛИ НЕТ - ТО ФИГУРА
   ПОЗИЦИОНИРУЕТСЯ ОТНОСИТЕЛЬНО ДОКУМЕНТА 
-  при position: absolute; !!!!!!!!!!!!!!!!*/
+  при position: absolute; !!!!!!!!!!!!!!!*/
 }
 .header-item-link:hover.header-item-link::after {
   content: "";
