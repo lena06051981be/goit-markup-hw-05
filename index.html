@@ -90,7 +90,7 @@
           <h1 class="main" title="Эффективные решения для вашего бизнеса">
             Эффективные решения для вашего бизнеса
           </h1>
-          <button  class="main-btn" type="button">Заказать услугу</button>
+          <button  class="main-btn" type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
 
@@ -453,8 +453,10 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop">
-      <div class="modal"></div>
+    <div class="backdrop is-hidden"data-modal>
+      <div class="modal">
+        <button type="button" class="modal-open-btn"data-modal-close>x</button>
+      </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
