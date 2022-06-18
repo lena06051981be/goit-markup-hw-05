@@ -495,7 +495,24 @@ h1[class="visually-hidden"] {
 .footer-soc-link:focus {
   background-color: #2196f3;
 }
-
+ .backdrop{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-color: #7575758b;
+ }
+ .modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  min-height: 600px;
+  background-color: #ffffff;
+  border-radius: 5px;
+ }
 /* Портфолио */
 
 .section-potfolio {
