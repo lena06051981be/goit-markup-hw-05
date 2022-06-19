@@ -145,7 +145,7 @@ button {
   ПОЗИЦИОНИРУЕТСЯ ОТНОСИТЕЛЬНО ДОКУМЕНТА 
   при position: absolute; !!!!!!!!!!!!!!!*/
 }
-.header-item-link:hover.header-item-link::after {
+.stream::after {
   content: "";
   position: absolute;
   bottom: -32.5px;
