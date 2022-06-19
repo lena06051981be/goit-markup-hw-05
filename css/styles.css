@@ -605,7 +605,7 @@ transform: translateY(100%);
 transition: transform 300ms linear
 
 }
-.services-item :hover .services-item-text{
+.services-item:hover .services-item-text{
   transform: translateY(0)
 }
 
