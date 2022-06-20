@@ -584,11 +584,6 @@ h1[class="visually-hidden"] {
 .modal-close-btn:hover .modal-icon {
   fill: var(--highlight-color);
 }
-.modal-icon {
-  width: 11px;
-  height: 11px;
-  color: #000000;
-}
 .is-hidden {
   opacity: 0;
   visibility: hidden;
