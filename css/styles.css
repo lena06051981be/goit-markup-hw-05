@@ -448,6 +448,7 @@ h1[class="visually-hidden"] {
   border: 1px solid var(--highlight-color);
   fill: var(--highlight-color);
   transition: fill 250ms var(--timing-function);
+  transition: border 250ms var(--timing-function);
 }
 
 /* footer */
