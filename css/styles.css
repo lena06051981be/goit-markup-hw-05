@@ -403,7 +403,7 @@ h1[class="visually-hidden"] {
   color: #afb1b8;
   fill: #afb1b8;
 
-  transition: background-color 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 .soc-icon {
   color: currentColor;
@@ -412,9 +412,7 @@ h1[class="visually-hidden"] {
 .soc-link:hover,
 .soc-link:focus {
   background-color: #2196f3;
-  fill: #ffffff;
-
-  transition: fill 250ms var(--timing-function);
+  fill: #ffffff; 
 }
 
 .section-clients {
