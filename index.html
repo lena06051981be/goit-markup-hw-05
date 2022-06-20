@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -27,8 +28,7 @@
       a {
         text-decoration: none; /* Убираем подчеркивание в ссылках  */
       }
-    </style>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </style>    
   </head>
   <body>
     <!-- header -->
@@ -156,12 +156,15 @@
           <ul class="team-list">
             <li class="team-li">
               <img src="./images/box_1.jpg" alt="logic" width="370" />
+              <p class="team-profile" ups>Десктопные приложения</p>
             </li>
             <li class="team-li">
               <img src="./images/box_2.jpg" alt="styles" width="370" />
+              <p class="team-profile">Мобильные приложения</p>
             </li>
             <li class="team-li">
               <img src="./images/box_3.jpg" alt="themes" width="370" />
+              <p class="team-profile">Дизайнерские решения</p>
             </li>
           </ul>
         </div>
@@ -455,13 +458,17 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button type="button" class="modal-open-btn" data-modal-close>x</button>
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg class="modal-icon">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
       </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-  AOS.init();
-</script>
-<script src="./js/modal.js"></script>
+      AOS.init();
+    </script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

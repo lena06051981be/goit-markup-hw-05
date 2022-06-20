@@ -90,6 +90,7 @@ button {
   --footer-contact-color: #ffffff;
   --portfolio-speciality-color: #757575;
   --typical-margin: 30px;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* header */
@@ -171,6 +172,7 @@ button {
 .contact:hover,
 .contact:focus {
   color: var(--highlight-color);
+  transition: color 250ms var(--timing-function);
 }
 .header-item-link:active,
 .header-link:active,
@@ -230,9 +232,12 @@ button {
 
 .main-btn:hover,
 .main-btn:focus {
-  background: #188ce8;
+  background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition: background-color 250ms var(--timing-function);
+  transition: box-shadow 250ms var(--timing-function);
+  
 }
 
 /* прячем заголовок от пользователя, Google  видит заголовок */
@@ -308,11 +313,31 @@ h1[class="visually-hidden"] {
 .team-list {
   display: flex;
 }
+.team-li {
+  position: relative;
+  display: flex;
+}
 
 .team-li:not(:last-child) {
   margin-right: var(--typical-margin);
 }
-
+.team-profile {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--main-tittle-color);
+}
 .section-team {
   background: #f5f4fa;
   padding: 94px 0;
@@ -381,6 +406,8 @@ h1[class="visually-hidden"] {
 .soc-link:focus {
   background-color: #2196f3;
   fill: #ffffff;
+  transition: fill 250ms var(--timing-function);  
+  transition: background-color 250ms var(--timing-function);
 }
 
 .section-clients {
@@ -418,8 +445,9 @@ h1[class="visually-hidden"] {
 }
 .clients-link:hover,
 .clients-link:focus {
-  border: 1px solid #2196f3;
-  fill: #2196f3;
+  border: 1px solid var(--highlight-color);
+  fill: var(--highlight-color);
+  transition: fill 250ms var(--timing-function);
 }
 
 /* footer */
@@ -494,43 +522,74 @@ h1[class="visually-hidden"] {
 .footer-soc-link:hover,
 .footer-soc-link:focus {
   background-color: #2196f3;
+  transition: background-color 250ms var(--timing-function);
 }
- .backdrop{
-  position:fixed;
+
+/* модальное окно */
+
+.backdrop {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-color: #7575758b;
- }
- .modal{
+  background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  width: 500px;
-  min-height: 600px;
-  background-color: #ffffff;
-  border-radius: 5px;
- }
- .modal-open-btn{
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: 250ms var(--timing-function);
+}
+.modal-close-btn {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 30px;
-  height: 30px;border: 1px solid #999999;
-  border-radius: 50%;
-  border-color: transparent;
+  top: 8px;
+  right: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-
- }
- .is-hidden{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-close-btn:hover .modal-icon {
+  fill: var(--highlight-color);
+}
+.modal-icon {
+  width: 11px;
+  height: 11px;
+  color: #000000;
+}
+.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
- }
+}
+/* модальное окно не скролится */
+/* .no-scroll {
+  overflow: hidden;
+} */
+
 /* Портфолио */
 
 .section-potfolio {
@@ -557,11 +616,14 @@ h1[class="visually-hidden"] {
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
-  background: #2196f3;
+  background-color: #2196f3;
   color: #ffffff;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: background-color 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .portfolio-btn-list {
@@ -584,7 +646,10 @@ ul.portfolio-btn-list li {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
-  
+}
+.service-link {
+  display: flex;
+  flex-direction: column;
 }
 .services-item:nth-child(3n) {
   margin-right: 0;
@@ -593,36 +658,50 @@ ul.portfolio-btn-list li {
   margin-bottom: 0;
 }
 
-.services-item-text{
-position: absolute;
-top: 0;
-font-size: 16px;
-color: #FFFFFF;
-line-height: 1.6;
-background-color: #3293e390;
-height: 100%;
-transform: translateY(100%);
-transition: transform 300ms linear
+/* Выезжающий текст */
 
+.services-item:hover .services-item-text,
+.service-link:focus .services-item-text {
+  transform: translateY(0);
 }
-.services-item:hover .services-item-text{
-  transform: translateY(0)
+.services-item-wrap {
+  position: relative;
+  overflow: hidden;
 }
+.services-item-text {
+  position: absolute;
+  top: 0;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--main-tittle-color);
+  background: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  height: 100%;
+  /* overflow: auto; */
+  transform: translateY(101%);
 
-.services-item-wrap{
-position: relative;
-overflow: hidden;
+  transition: transform 250ms var(--timing-function);
 }
-.service-link {
-  display: flex;
-  flex-direction: column;
+/* Scroolbar */
+/* .services-item-text::-webkit-scrollbar {
+  width: 5px;
 }
+.services-item-text::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.services-item-text::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+} */
+
 .service-link:hover,
 .service-link:focus {
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .div-services {
