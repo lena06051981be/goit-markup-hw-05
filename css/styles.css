@@ -233,7 +233,7 @@ button {
   min-width: 200px;
   height: 50px;
 
-  transition: box-shadow 250ms var(--timing-function);
+  transition: box-shadow 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .main-btn:hover,
@@ -241,8 +241,6 @@ button {
   background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-
-  transition: background-color 250ms var(--timing-function);
 }
 
 /* прячем заголовок от пользователя, Google  видит заголовок */
