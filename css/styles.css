@@ -447,7 +447,7 @@ h1[class="visually-hidden"] {
   color: #afb1b8;
   fill: #afb1b8;
 
-  transition: border 250ms var(--timing-function);
+  transition: border 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 .client-icon {
   color: currentColor;
@@ -456,8 +456,6 @@ h1[class="visually-hidden"] {
 .clients-link:focus {
   border: 1px solid var(--highlight-color);
   fill: var(--highlight-color);
-
-  transition: fill 250ms var(--timing-function);
 }
 
 /* footer */
