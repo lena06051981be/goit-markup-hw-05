@@ -501,7 +501,7 @@ h1[class="visually-hidden"] {
 
   transition: color 250ms var(--timing-function);
 }
-/* ---NEW--- */
+/* --NEW-- */
 .footer-contacts {
   margin-left: 70px;
   padding-top: 12px;
